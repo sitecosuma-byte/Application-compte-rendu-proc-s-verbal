@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Couleurs institutionnelles COSUMA-RDC */
+@theme {
+  --color-navy-50: #eef2f9;
+  --color-navy-100: #d9e2f1;
+  --color-navy-600: #2a4a85;
+  --color-navy-700: #1f3864;
+  --color-navy-800: #172a4b;
+  --color-navy-900: #0f1c33;
+  --color-gold-400: #d4a72c;
+  --color-gold-500: #b8860b;
+  --font-serif: "Cambria", "Georgia", "Times New Roman", serif;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 antialiased;
+}
+
+/* Composants réutilisables (déclarés en @utility pour pouvoir être composés avec @apply) */
+@utility card {
+  @apply rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5;
+}
+@utility label {
+  @apply mb-1 block text-xs font-semibold tracking-wide text-slate-500 uppercase;
+}
+@utility input {
+  @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition focus:border-navy-600 focus:ring-2 focus:ring-navy-100;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-navy-700 text-white hover:bg-navy-800;
+}
+@utility btn-gold {
+  @apply btn bg-gold-500 text-white hover:bg-gold-400;
+}
+@utility btn-ghost {
+  @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-100;
+}
+@utility btn-danger {
+  @apply btn bg-red-600 text-white hover:bg-red-700;
+}
